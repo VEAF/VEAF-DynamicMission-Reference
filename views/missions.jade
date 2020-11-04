@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1= title
+    small= subtitle
+    
+    p
+      a(href='/') Back to the menu
+
+    h2 Available commands :
+    ul
+      li start a mission : 
+        code _remote#TheMightyPassword -veaf start-silent-<MISSION>
+      li stop a mission : 
+        code _remote#TheMightyPassword -veaf stop-silent-<MISSION>
+
+    each mission in data
+      h2= mission.name
+      p= mission.briefing
+      button(type="button" class="collapsible") Variants
+      div(class="content")
+        if(mission.variants.length)
+          ul
+          each missionVariant in mission.variants
+            li= missionVariant.name
+            ul
+              li
+                code(onclick="copyElementText(this.id)", id="_code start #{missionVariant.name}", class="copiable") _remote#TheMightyPassword -veaf start-silent-#{missionVariant.name}
+              li 
+                code(onclick="copyElementText(this.id)", id="_code stop #{missionVariant.name}", class="copiable") _remote#TheMightyPassword -veaf stop-silent-#{missionVariant.name}
+      hr
+

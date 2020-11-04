@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1= title
+    small= subtitle
+
+    p
+      a(href='/') Back to the menu
+
+    each alias in data
+      h2= alias.name
+      p= alias.description
+      if !alias.bypassSecurity
+        i This is a secured alias
+      p
+      button(type="button" class="collapsible") Details
+      div(class="content")
+        p Aliased command:
+        code= alias.veafCommand
+        if(alias.randomParameters.length)
+          p Randomized parameters:
+          ul
+          each param in alias.randomParameters
+            li #{param.name}  [#{param.low} .. #{param.high}]
+      hr
+
