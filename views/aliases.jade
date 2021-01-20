@@ -7,8 +7,15 @@ block content
     p
       a(href='/') Back to the menu
 
+    h2 Documentation de la mission OpenTraining
+    
+    p
+      a(href='https://tinyurl.com/veaf-ot') https://tinyurl.com/veaf-ot
+
+    h2 Liste des commandes
+
     each alias in data
-      h2= alias.name
+      h3= alias.name
       p= alias.description
       if !alias.bypassSecurity
         i This is a secured alias
