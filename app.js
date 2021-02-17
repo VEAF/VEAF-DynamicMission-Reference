@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var publicSlmodRouter = require('./routes/publicSlmod');
+var privateSlmodRouter = require('./routes/privateSlmod');
 var aliasesRouter = require('./routes/aliases');
 var missionsRouter = require('./routes/missions');
 
@@ -21,6 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/slmod/public', publicSlmodRouter)
+app.use('/slmod/private', privateSlmodRouter)
 app.use('/aliases', aliasesRouter);
 app.use('/missions', missionsRouter);
 
