@@ -25,8 +25,8 @@ block content
             li= missionVariant.name
             ul
               li
-                code(onclick="copyElementText(this.id)", id="_code start #{missionVariant.name}", class="copiable") _remote#TheMightyPassword -veaf start-silent-#{missionVariant.name}
+                code(onclick="copyElementText(this.id)", id="_code start #{missionVariant.name}", class="copiable") /air start #{missionVariant.name} [silent]
               li 
-                code(onclick="copyElementText(this.id)", id="_code stop #{missionVariant.name}", class="copiable") _remote#TheMightyPassword -veaf stop-silent-#{missionVariant.name}
+                code(onclick="copyElementText(this.id)", id="_code stop #{missionVariant.name}", class="copiable") /air stop #{missionVariant.name} [silent]
       hr
 
