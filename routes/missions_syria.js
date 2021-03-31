@@ -1,11 +1,12 @@
 const { notDeepEqual } = require('assert');
 var express = require('express');
 var router = express.Router();
+router.missionName="_OpenTraining_Syria"
 let fs = require('fs')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const filename = 'CombatMissionsList.json'
+  const filename = "CombatMissionsList"+router.missionName+".json"
   let path = process.env.VEAF_EXPORT_DIR + '\\' + filename
   if (!fs.existsSync(path)) {
     path = process.env.TEMP + '\\' + filename
@@ -25,9 +26,9 @@ router.get('/', function(req, res, next) {
       }
       missionGroup.variants.push(mission)
     }
-    res.render('missions', { title: 'List of combat missions', subtitle:'read from '+path, data: parsedMissions } );
+    res.render('missions', { title: 'Liste des missions air-air', subtitle:'générée à partir de '+path, data: parsedMissions } );
   } else {
-    res.render('error', { message: 'Error !', error: {status:"Cannot find "+filename, stack:"missions.js"} } );
+    res.render('error', { message: 'Erreur !', error: {status:"Impossible de trouver le fichier "+filename, stack:"missions.js"} } );
   }
 });
 

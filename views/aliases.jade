@@ -5,12 +5,7 @@ block content
     small= subtitle
 
     p
-      a(href='/') Back to the menu
-
-    h2 Documentation de la mission OpenTraining
-    
-    p
-      a(href='https://tinyurl.com/veaf-ot') https://tinyurl.com/veaf-ot
+      a(href='/') Retour au menu principal
 
     h2 Liste des commandes
 
@@ -18,16 +13,16 @@ block content
       h3= alias.name
       p= alias.description
       if !alias.bypassSecurity
-        i This is a secured alias
+        i Cet alias est sécurisé
       p
-      button(type="button" class="collapsible") Details
+      button(type="button" class="collapsible") Détails
       div(class="content")
-        p Aliased command:
+        p Commande ciblée:
         code= alias.veafCommand
         if(alias.randomParameters.length)
-          p Randomized parameters:
+          p Paramètres randomisés:
           ul
           each param in alias.randomParameters
-            li #{param.name}  [#{param.low} .. #{param.high}]
+            li #{param.name} (entre #{param.low} et #{param.high})
       hr
 

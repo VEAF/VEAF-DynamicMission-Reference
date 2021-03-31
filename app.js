@@ -5,10 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+
 var publicSlmodRouter = require('./routes/publicSlmod');
 var privateSlmodRouter = require('./routes/privateSlmod');
-var aliasesRouter = require('./routes/aliases');
-var missionsRouter = require('./routes/missions');
+
+var aliasesRouter_Syria = require('./routes/aliases_syria');
+var aliasesRouter_Caucasus = require('./routes/aliases_caucasus');
+
+var missionsRouter_Syria = require('./routes/missions_syria');
+var missionsRouter_Caucasus = require('./routes/missions_caucasus');
 
 var app = express();
 
@@ -25,8 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/slmod/public', publicSlmodRouter)
 app.use('/slmod/private', privateSlmodRouter)
-app.use('/aliases', aliasesRouter);
-app.use('/missions', missionsRouter);
+app.use('/aliases/syria', aliasesRouter_Syria);
+app.use('/aliases/caucasus', aliasesRouter_Caucasus);
+app.use('/missions/syria', missionsRouter_Syria);
+app.use('/missions/caucasus', missionsRouter_Caucasus);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

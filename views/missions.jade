@@ -5,19 +5,21 @@ block content
     small= subtitle
     
     p
-      a(href='/') Back to the menu
+      a(href='/') Retour au menu principal
 
-    h2 Available commands :
+    h2 Les missions peuvent être déclenchées par des membres, en utilisant le chat (attention, il doit être en mode "tous" et pas "alliés") :
     ul
-      li start a mission : 
-        code _remote#TheMightyPassword -veaf start-silent-<MISSION>
-      li stop a mission : 
-        code _remote#TheMightyPassword -veaf stop-silent-<MISSION>
+      li Démarrer une mission : 
+        code /air start <MISSION> [silent] 
+      li Arrêter une mission : 
+        code /air stop <MISSION> [silent] 
+      li Lister les mission : 
+        code /air list
 
     each mission in data
       h2= mission.name
       p= mission.briefing
-      button(type="button" class="collapsible") Variants
+      button(type="button" class="collapsible") Variantes
       div(class="content")
         if(mission.variants.length)
           ul
