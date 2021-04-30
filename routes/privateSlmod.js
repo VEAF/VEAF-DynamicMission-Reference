@@ -14,4 +14,8 @@ router.get('/penaltystats', function(req, res, next) {
   res.sendFile('/Users/veaf/Saved Games/private_server/Slmod/SlmodPenaltyStats.json', { root: '' });
 });
 
+router.get('/events', function(req, res, next) {
+  res.sendFile('/Users/veaf/Saved Games/private_server/Slmod/slmodEvents.json', { root: '' });
+});
+
 module.exports = router;
