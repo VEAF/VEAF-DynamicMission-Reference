@@ -13,7 +13,9 @@ block content
       h3= alias.name
       p= alias.description
       if !alias.bypassSecurity
-        i Cet alias est sécurisé
+        i(style="color:red") Cet alias est sécurisé
+      else
+        i(style="color:green") Cet alias est ouvert à tous
       p
       button(type="button" class="collapsible") Détails
       div(class="content")
