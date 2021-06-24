@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var publicSlmodRouter = require('./routes/publicSlmod');
+var public2SlmodRouter = require('./routes/public2Slmod');
 var privateSlmodRouter = require('./routes/privateSlmod');
 
 var aliasesRouter_Syria = require('./routes/aliases_syria');
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/slmod/public', publicSlmodRouter)
+app.use('/slmod/public2', public2SlmodRouter)
 app.use('/slmod/private', privateSlmodRouter)
 app.use('/aliases/syria', aliasesRouter_Syria);
 app.use('/aliases/caucasus', aliasesRouter_Caucasus);
