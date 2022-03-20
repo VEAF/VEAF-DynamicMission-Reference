@@ -32,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/slmod/public', publicSlmodRouter)
 app.use('/slmod/public2', public2SlmodRouter)
 app.use('/slmod/private', privateSlmodRouter)
+app.use('/slmod/private2', private2SlmodRouter)
 app.use('/aliases/syria', aliasesRouter_Syria);
 app.use('/aliases/caucasus', aliasesRouter_Caucasus);
 app.use('/missions/syria', missionsRouter_Syria);
