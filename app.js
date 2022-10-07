@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var publicSlmodRouter = require('./routes/publicSlmod');
 var public2SlmodRouter = require('./routes/public2Slmod');
 var privateSlmodRouter = require('./routes/privateSlmod');
+var private2SlmodRouter = require('./routes/private2Slmod');
 
 var aliasesRouter_Syria = require('./routes/aliases_syria');
 var aliasesRouter_Caucasus = require('./routes/aliases_caucasus');
