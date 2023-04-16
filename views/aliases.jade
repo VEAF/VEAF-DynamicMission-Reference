@@ -21,7 +21,7 @@ block content
       div(class="content")
         p Commande ciblée:
         code= alias.veafCommand
-        if(alias.randomParameters.length)
+        if(alias.randomParameters && alias.randomParameters.length)
           p Paramètres randomisés:
           ul
           each param in alias.randomParameters
