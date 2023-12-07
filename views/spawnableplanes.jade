@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    small= subtitle
+
+    p
+      a(href='/') Retour au menu principal
+
+    h2 Liste des avions spawnables
+    ul
+    each name in data
+      li= name
+

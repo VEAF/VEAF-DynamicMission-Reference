@@ -17,6 +17,9 @@ var aliasesRouter_Caucasus = require('./routes/aliases_caucasus');
 var missionsRouter_Syria = require('./routes/missions_syria');
 var missionsRouter_Caucasus = require('./routes/missions_caucasus');
 
+var spawnableplanesRouter_Syria = require('./routes/spawnableplanes_syria');
+var spawnableplanesRouter_Caucasus = require('./routes/spawnableplanes_caucasus');
+
 var app = express();
 
 // view engine setup
@@ -38,6 +41,8 @@ app.use('/aliases/syria', aliasesRouter_Syria);
 app.use('/aliases/caucasus', aliasesRouter_Caucasus);
 app.use('/missions/syria', missionsRouter_Syria);
 app.use('/missions/caucasus', missionsRouter_Caucasus);
+app.use('/spawnableplanes/syria', spawnableplanesRouter_Syria);
+app.use('/spawnableplanes/caucasus', spawnableplanesRouter_Caucasus);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
